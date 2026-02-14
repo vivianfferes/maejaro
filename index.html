@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Imersão Mãejaro · 40 injeções de ânimo</title>
+    <!-- Fonte limpa e moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef9f2;
+            color: #2d2a24;
+            line-height: 1.4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 0 32px 0;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.03);
+        }
+        
+        /* TOPO OTIMIZADO */
+        .top-header {
+            background: linear-gradient(135deg, #2e3b3b 0%, #1f2a2a 100%);
+            color: white;
+            padding: 20px 18px 18px 18px;
+            text-align: center;
+            border-bottom: 5px solid #ffb347;
+        }
+        .top-header .badge {
+            background: #ffe26f;
+            color: #1e1e1e;
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .top-header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        .top-header h1 span {
+            color: #ffde59;
+        }
+        .top-header h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+        
+        /* contador gatilho */
+        .countdown-mental {
+            background: #ffe6d5;
+            color: #2d2a24;
+            padding: 14px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            font-weight: 600;
+            border-bottom: 3px solid #f9b84a;
+        }
+        .countdown-mental i {
+            color: #c55a2b;
+            margin-right: 6px;
+        }
+        .countdown-mental span {
+            background: white;
+            padding: 5px 16px;
+            border-radius: 40px;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 24px 18px 16px 18px;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title i {
+            color: #e07c3c;
+            font-size: 1.8rem;
+        }
+        
+        .bullet-list {
+            margin: 0 18px 24px 18px;
+            list-style: none;
+        }
+        .bullet-list li {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+            font-size: 1.05rem;
+        }
+        .bullet-list li i {
+            color: #44a77c;
+            font-size: 1.4rem;
+            min-width: 28px;
+            text-align: center;
+            margin-top: 2px;
+        }
+        
+        .card-40 {
+            background: #faf3e9;
+            margin: 8px 18px 28px 18px;
+            padding: 24px 16px;
+            border-radius: 28px;
+            box-shadow: 0 12px 25px -10px rgba(0,0,0,0.2);
+            border: 1px solid #ffe2c1;
+            text-align: center;
+        }
+        .card-40 p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+        .card-40 .motivos {
+            font-weight: 800;
+            font-size: 2.3rem;
+            background: #2e3b3b;
+            color: white;
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 60px;
+            letter-spacing: 2px;
+            border: 3px solid #fbc17b;
+        }
+        
+        /* FOTO DA VIVIAN (REDUZIDA) + MINIBIO */
+        .foto-autoridade-container {
+            margin: 10px 18px 15px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .foto-autoridade {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
+            border: 4px solid #ffb347;
+            margin-bottom: 12px;
+        }
+        .foto-autoridade img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .minibio {
+            background: #f0ebe5;
+            padding: 16px 20px;
+            border-radius: 28px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #2d2a24;
+            border-left: 5px solid #e07c3c;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            width: 100%;
+        }
+        .minibio i {
+            color: #c96b2e;
+            margin-right: 5px;
+        }
+        .minibio strong {
+            color: #1f3d3a;
+        }
+        
+        /* BLOCO PIX */
+        .bloqueio-pix {
+            background: white;
+            margin: 20px 18px 20px 18px;
+            padding: 26px 18px;
+            border-radius: 32px;
+            box-shadow: 0 8px 30px rgba(233, 176, 113, 0.25);
+            border: 2px dashed #c8aa8b;
+            transition: all 0.2s;
+        }
+        .bloqueio-pix.liberado {
+            border: 3px solid #479f7a;
+            background: #f0fff7;
+        }
+        .form-pix {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .input-group label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #3b3b3b;
+            margin-left: 5px;
+        }
+        .input-group label i {
+            margin-right: 6px;
+            color: #d8823a;
+        }
+        .input-group input {
+            padding: 16px 18px;
+            border-radius: 60px;
+            border: 1.5px solid #e0cfbf;
+            font-size: 1rem;
+            background: #fffcf8;
+            outline: none;
+            transition: 0.15s;
+        }
+        .input-group input:focus {
+            border-color: #e88c4a;
+            box-shadow: 0 0 0 3px rgba(232,140,74,0.2);
+        }
+        .btn-ativar {
+            background: #1f3d3a;
+            color: white;
+            border: none;
+            padding: 18px 18px;
+            border-radius: 60px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 8px;
+            border: 1px solid #28755b;
+            box-shadow: 0 8px 14px rgba(0,40,20,0.25);
+        }
+        .btn-ativar:hover {
+            background: #14322e;
+        }
+        .btn-ativar:active {
+            transform: scale(0.97);
+        }
+        .btn-ativar:disabled {
+            background: #555;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        
+        .pix-revelado {
+            margin-top: 28px;
+            text-align: center;
+            border-top: 2px solid #e2d2c0;
+            padding-top: 22px;
+        }
+        .pix-revelado .qr-box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 32px;
+            display: inline-block;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            border: 2px solid #f1c9a7;
+        }
+        .qr-box img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 16px;
+            background: #efd5bf;
+        }
+        .pix-copia-cola {
+            background: #f2e9e1;
+            padding: 14px 18px;
+            border-radius: 40px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+            border: 1px solid #c6aa93;
+            margin: 18px 0 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pix-copia-cola button {
+            background: none;
+            border: 2px solid #7b5e4b;
+            border-radius: 40px;
+            padding: 8px 14px;
+            font-weight: 600;
+            color: #2e2e2e;
+            cursor: pointer;
+            background: white;
+            font-size: 0.9rem;
+        }
+        
+        .faixa-final {
+            background: #ffe6d5;
+            padding: 18px;
+            margin: 20px 18px 10px 18px;
+            border-radius: 40px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .faixa-final i {
+            color: #c55a2b;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #9b8b7c;
+            margin-top: 15px;
+        }
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- CABEÇALHO -->
+        <div class="top-header">
+            <span class="badge"><i class="fas fa-bolt"></i> 40 DIAS · 40 INJEÇÕES DE ÂNIMO</span>
+            <h1>IMERSÃO <span>MÃEJARO</span></h1>
+            <h2>mudanças reais · recomeço · energia</h2>
+            <div style="margin-top: 10px; font-size: 0.95rem;"><i class="fas fa-arrow-down" style="color: #ffde59;"></i> veja como participar</div>
+        </div>
+        
+        <!-- GATILHO CONTADOR -->
+        <div class="countdown-mental">
+            <div><i class="fas fa-fire"></i> 40 motivos pra comemorar</div>
+            <span><i class="far fa-clock"></i> vagas limitadas</span>
+        </div>
+
+        <!-- LISTA DE BENEFÍCIOS -->
+        <div class="section-title">
+            <i class="fas fa-syringe"></i> 
+            <span>o que você leva</span>
+        </div>
+        <ul class="bullet-list">
+            <li><i class="fas fa-check-circle"></i> <strong>Mudança real de rotina:</strong> comece no primeiro dia</li>
+            <li><i class="fas fa-heart" style="color:#f05b5b;"></i> <strong>Ânimo diário:</strong> 40 mensagens exclusivas</li>
+            <li><i class="fas fa-glass-cheers"></i> <strong>40 motivos pra celebrar</strong> </li>
+            <li><i class="fas fa-users"></i> <strong>Grupo exclusivo:</strong> suporte de mães na mesma jornada</li>
+        </ul>
+
+        <!-- CARD 40 -->
+        <div class="card-40">
+            <p><i class="fas fa-quote-left" style="opacity:0.5;"></i> 40 dias para virar o jogo.</p>
+            <div class="motivos">40</div>
+            <p style="margin-top:12px;"><i class="fas fa-dumbbell"></i> + <i class="fas fa-carrot"></i> + <i class="fas fa-brain"></i></p>
+        </div>
+
+        <!-- FOTO DA VIVIAN -->
+        <div class="foto-autoridade-container">
+            <div class="foto-autoridade">
+                <img src="viviancapa.jpeg" alt="Nutricionista Vivian" onerror="this.src='https://via.placeholder.com/160x160?text=Vivian';">
+            </div>
+            <div class="minibio">
+                <i class="fas fa-certificate"></i> <strong>Nutricionista Vivian</strong><br>
+                <i class="fas fa-graduation-cap"></i> Mestrado pela Universidade Federal de São Paulo (UNIFESP)<br>
+                <i class="fas fa-star"></i> Mais de 17 anos transformando a vida de famílias com ciência e acolhimento.
+            </div>
+        </div>
+
+        <!-- GARANTA SUA VAGA -->
+        <div class="section-title" style="margin-bottom: 5px;">
+            <i class="fas fa-lock" style="color:#b35e2e;"></i> 
+            <span>garanta sua vaga</span>
+        </div>
+
+        <div id="pixBlock" class="bloqueio-pix">
+            <!-- formulário de pré-requisito -->
+            <div id="formPreRequisito">
+                <p style="font-weight: 600; margin-bottom: 20px; font-size: 1.2rem; text-align: center;">✍️ preencha abaixo para garantir sua vaga</p>
+                <div class="form-pix">
+                    <div class="input-group">
+                        <label><i class="fas fa-user"></i> Nome completo</label>
+                        <input type="text" id="nomeCompleto" placeholder="seu nome completo" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fab fa-whatsapp"></i> WhatsApp (com DDD)</label>
+                        <input type="tel" id="whatsapp" placeholder="(11) 99999-9999">
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fas fa-envelope"></i> E-mail</label>
+                        <input type="email" id="email" placeholder="voce@email.com">
+                    </div>
+                    <button class="btn-ativar" id="btnLiberarPix"><i class="fas fa-unlock-alt"></i> QUERO INICIAR</button>
+                </div>
+                <p style="font-size:0.8rem; margin-top: 15px; color: #805f45;"><i class="fas fa-shield-alt"></i> dados para criar seu vínculo no grupo vip</p>
+            </div>
+
+            <!-- conteúdo do pix liberado -->
+            <div id="pixLiberado" class="pix-revelado hidden">
+                <div style="font-size: 1.3rem; font-weight: 700; color: #277c58;"><i class="fas fa-circle-check"></i> Acesso liberado!</div>
+                <p style="margin-bottom: 20px;">faça o PIX e garanta sua vaga na imersão Mãejaro</p>
+                <div class="qr-box">
+                    <img src="qrcodepix.jpeg" alt="QR Code PIX" onerror="this.src='https://via.placeholder.com/180?text=QR+PIX'; this.style.background='#ddd';">
+                </div>
+                <div class="pix-copia-cola" id="pixCopiaCola">
+                    <span id="codigoPix">00020126580014br.gov.bcb.pix0136a1b2c3d4e5f67890-Maejaro40</span>
+                    <button id="btnCopiar"><i class="far fa-copy"></i> copiar</button>
+                </div>
+                <p style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> após pagamento, envie comprovante no <strong>whatsapp</strong> para ativação imediata</p>
+            </div>
+        </div>
+
+        <div class="faixa-final">
+            <i class="fas fa-rocket"></i> 40 vagas por turma · 40 injeções de ânimo <i class="fas fa-rocket"></i>
+        </div>
+
+        <div class="footer">
+            © Imersão Mãejaro · sua jornada de renovação
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE INTEGRAÇÃO (Firebase e EmailJS) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        // 1. CONFIGURAÇÃO DO SEU FIREBASE
+        const firebaseConfig = {
+            apiKey: "AIzaSyA7MxG-kx7bz-U4Fdo7T2Fxrix59hOVz0Y",
+            authDomain: "maejaro-327da.firebaseapp.com",
+            projectId: "maejaro-327da",
+            storageBucket: "maejaro-327da.firebasestorage.app",
+            messagingSenderId: "463132565053",
+            appId: "1:463132565053:web:029642ef7e5c2df8ca5454"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // 2. CONFIGURAÇÃO DO SEU EMAILJS
+        (function() {
+            emailjs.init("bNSmBp3eFfWNFN1Sp"); 
+        })();
+
+        // Elementos da página
+        const btnLiberar = document.getElementById('btnLiberarPix');
+        const formDiv = document.getElementById('formPreRequisito');
+        const pixDiv = document.getElementById('pixLiberado');
+        const pixBlockDiv = document.getElementById('pixBlock');
+
+        btnLiberar.addEventListener('click', function() {
+            const nome = document.getElementById('nomeCompleto').value.trim();
+            const whats = document.getElementById('whatsapp').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (nome === '' || whats === '' || email === '') {
+                alert('❗ Por favor, preencha todos os campos para liberar o PIX.');
+                return;
+            }
+            if (!email.includes('@')) {
+                alert('❗ Por favor, insira um e-mail válido.');
+                return;
+            }
+
+            // Desativa o botão para evitar múltiplos cliques
+            btnLiberar.disabled = true;
+            btnLiberar.innerText = "Processando...";
+
+            // SALVAR NO FIREBASE (BANCO DE DADOS)
+            db.collection("leads").add({
+                nomeCompleto: nome,
+                whatsapp: whats,
+                email: email,
+                data: new Date().toLocaleString("pt-BR")
+            })
+            .then(() => {
+                // ENVIAR E-MAIL AUTOMÁTICO PARA VOCÊ
+                return emailjs.send("service_s9ellcc", "template_gplm9to", {
+                    nomeCompleto: nome,
+                    whatsapp: whats,
+                    email: email,
+                    data: new Date().toLocaleString("pt-BR")
+                });
+            })
+            .then(() => {
+                // LIBERAR INTERFACE DO PIX
+                formDiv.classList.add('hidden');
+                pixDiv.classList.remove('hidden');
+                pixBlockDiv.classList.add('liberado');
+
+                // ABRIR WHATSAPP COM MENSAGEM PRONTA
+                const mensagem = encodeURIComponent(`Olá Vivian! Acabei de me cadastrar na Imersão Mãejaro. Meu nome é ${nome}.`);
+                const urlWhats = `https://wa.me/5511953421581?text=${mensagem}`;
+                
+                // Abre o WhatsApp após 2 segundos
+                setTimeout(() => {
+                    window.open(urlWhats, '_blank');
+                }, 2000);
+            })
+            .catch((error) => {
+                console.error("Erro técnico:", error);
+                alert("Ocorreu um erro ao processar. Tente novamente.");
+                btnLiberar.disabled = false;
+                btnLiberar.innerText = "QUERO INICIAR";
+            });
+        });
+
+        // Lógica do Botão Copiar Chave PIX
+        document.getElementById('btnCopiar').addEventListener('click', function() {
+            const texto = document.getElementById('codigoPix').innerText;
+            navigator.clipboard.writeText(texto).then(() => {
+                alert('✅ Chave PIX copiada! Agora é só colar no aplicativo do seu banco.');
+            }).catch(() => {
+                alert('Erro ao copiar. Por favor, selecione o código manualmente.');
+            });
+        });
+    </script>
+</body>
+</html>
